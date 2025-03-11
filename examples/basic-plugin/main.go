@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	plugin "github.com/iures/daiv-plugin"
+	plug "github.com/iures/daivplug"
 )
 
 // BasicPlugin implements a simple example plugin
@@ -18,19 +18,19 @@ func (p *BasicPlugin) Name() string {
 }
 
 // Manifest returns the configuration manifest
-func (p *BasicPlugin) Manifest() *plugin.PluginManifest {
-	return &plugin.PluginManifest{
-		ConfigKeys: []plugin.ConfigKey{
+func (p *BasicPlugin) Manifest() *plug.PluginManifest {
+	return &plug.PluginManifest{
+		ConfigKeys: []plug.ConfigKey{
 			{
 				Key:         "username",
-				Type:        plugin.ConfigTypeString,
+				Type:        plug.ConfigTypeString,
 				Name:        "Username",
 				Description: "Your username",
 				Required:    true,
 			},
 			{
 				Key:         "is_enabled",
-				Type:        plugin.ConfigTypeBoolean,
+				Type:        plug.ConfigTypeBoolean,
 				Name:        "Enable Features",
 				Description: "Enable additional features",
 				Required:    false,
@@ -52,10 +52,10 @@ func (p *BasicPlugin) Shutdown() error {
 }
 
 // GetStandupContext implements the StandupPlugin interface
-func (p *BasicPlugin) GetStandupContext(timeRange plugin.TimeRange) (plugin.StandupContext, error) {
+func (p *BasicPlugin) GetStandupContext(timeRange plug.TimeRange) (plug.StandupContext, error) {
 	username, _ := p.config["username"].(string)
 	
-	return plugin.StandupContext{
+	return plug.StandupContext{
 		PluginName: p.Name(),
 		Content:    fmt.Sprintf("Hello, %s! This is a basic plugin example.\nTime range: %s to %s", 
 			username, 
