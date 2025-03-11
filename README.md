@@ -7,7 +7,7 @@ This is a Go library for creating and managing plugins for the DAIV application 
 To use this library in your main application or plugin, add it as a dependency:
 
 ```bash
-go get github.com/iures/daiv-plugin
+go get github.com/iures/daivplug
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ To create a plugin that works with this system:
 package main
 
 import (
-	plugin "github.com/iures/daiv-plugin"
+	plugin "github.com/iures/daivplug"
 )
 
 // MyPlugin implements the Plugin interface

@@ -1,6 +1,6 @@
 .PHONY: all build install test clean example
 
-PACKAGE_NAME=github.com/iures/daiv-plugin
+PACKAGE_NAME=github.com/iures/daivplug
 EXAMPLE_DIR=examples/basic-plugin
 EXAMPLE_PLUGIN=basic-plugin.so
 
